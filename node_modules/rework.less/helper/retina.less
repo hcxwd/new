@@ -1,0 +1,28 @@
+/*
+* 模块描述：转换视网膜背景图片设置
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（latest-1）
+* 模块作者：@yincw
+* 最后更新：2015-06-03
+*/
+
+.retina(@file-1x; @file-2x; @width-1x; @height-1x) {
+    background-image: url("@{file-1x}");
+
+    @media only screen and ( min-device-pixel-ratio: 2 ),
+    only screen and ( min-resolution: 192dpi ),
+    only screen and ( min-resolution: 2dppx ) {
+        background-image: url("@{file-2x}");
+        background-size: @width-1x @height-1x;
+    }
+
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// .example { .retina("/img/bg-1x.png", "/img/bg-2x.png", 100px, 100px); }
+
+// ==============================
+// 参考文献
+// ==============================
+// http://v3.bootcss.com/css/#less-mixins-retina-images

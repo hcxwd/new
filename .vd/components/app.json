@@ -1,0 +1,26 @@
+{
+  "name": "App",
+  "description": "主框架+权限",
+  "version": "1.0.0",
+  "compatibility": {
+    "chrome": "latest",
+    "firefox": "latest",
+    "safari": "latest",
+    "ie": "9+"
+  },
+  "module": [
+    "images",
+    "style"
+  ],
+  "isPropCheck": true,
+  "note": "",
+  "type": 1,
+  "lifecycle": [],
+  "author": "黄楚雄",
+  "camelCaseName": "app",
+  "saga": {
+    "url": "/api/User/Get",
+    "requestVarName": "Get",
+    "method": "get"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "author": "黄楚雄",
+  "type": 1,
+  "format": "class",
+  "group": "",
+  "name": "Login",
+  "description": "login",
+  "version": "1.0.0",
+  "compatibility": {
+    "chrome": "latest",
+    "firefox": "latest",
+    "safari": "latest",
+    "ie": "9+"
+  },
+  "isPropCheck": true,
+  "saga": {
+    "url": "/api/Login/In",
+    "requestVarName": "login",
+    "method": "post"
+  },
+  "lifecycleMountingOptions": [
+    "constructor",
+    "render",
+    "componentWillMount"
+  ],
+  "lifecycleUpdatingOptions": [
+    "componentWillReceiveProps"
+  ],
+  "lifecycle": [
+    "constructor",
+    "render",
+    "componentWillMount",
+    "componentWillReceiveProps"
+  ],
+  "camelCaseName": "login"
+}

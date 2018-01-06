@@ -1,0 +1,36 @@
+{
+  "author": "黄楚雄",
+  "type": 1,
+  "format": "class",
+  "group": "",
+  "name": "Header",
+  "description": "header&Menu",
+  "version": "1.0.0",
+  "compatibility": {
+    "chrome": "latest",
+    "firefox": "latest",
+    "safari": "latest",
+    "ie": "9+"
+  },
+  "lifecycleMountingOptions": [
+    "constructor",
+    "render",
+    "componentWillMount"
+  ],
+  "lifecycleUpdatingOptions": [
+    "componentWillReceiveProps"
+  ],
+  "isPropCheck": true,
+  "saga": {
+    "url": "/Action/Run?method=appcharge.bannershow.get",
+    "requestVarName": "getMenu",
+    "method": "get"
+  },
+  "lifecycle": [
+    "constructor",
+    "render",
+    "componentWillMount",
+    "componentWillReceiveProps"
+  ],
+  "camelCaseName": "header"
+}

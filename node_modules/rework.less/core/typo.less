@@ -1,0 +1,141 @@
+/*
+* 模块描述：中文网页排版样式
+* 模块兼容：Google Chrome（latest-1）、Mozilla Firefox（latest-1）、Internet Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2016-08-24
+*/
+
+@font-family-base: "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+@font-family-monospace: Consolas, 'Microsoft Yahei', Tahoma, '\5b8b\4f53', monospace;
+
+@font-size-base: 14px;
+@font-size-large: ceil((@font-size-base * 1.25)); // ~18px
+@font-size-small: ceil((@font-size-base * 0.85)); // ~12px
+
+@line-height-base: 20/14; // 1.428571429
+
+body,
+input, textarea, button, select, optgroup, option {
+    // @font-family-base: 'Hiragino Sans GB', 'Microsoft Yahei', Tahoma, '\5b8b\4f53', Arial, sans-serif;
+    // 苹果丽黑（Mac OS X 系统自带精美中文字体），
+    // 微软雅黑（Windows 7 中文系统默认字体），
+    // Tahoma（Windows XP 英文版系统默认字体），
+    // 宋体（\5b8b\4f53，Windows XP 中文版系统默认字体），
+    // Arial（无衬线体），
+    // sans-serif（无衬线体）
+    font-family: @font-family-base;
+
+    // 结果 = 目标 / 上下文
+    font-size: @font-size-base;
+    //font-size: 75%;  // 12px/16px = 0.75*100% = 75%
+    //font-size: 87.5%;  // 14px/16px = 0.875*100% = 87.5%
+    //font-size: 100%;  // 16px/16px = 1*100% = 100%
+    //font-size: 125%;  // 20px/16px = 1.25*100% = 125%
+    //font-size: 150%;  // 24px/16px = 1.5*100% = 150%
+    //font-size: 175%;  // 28px/16px = 1.75*100% = 175%
+    //font-size: 200%;  // 32px/16px = 2*100% = 200%
+
+    // 相对于字体大小设置行高 -> http://www.typogui.de/#fontsizelineheight
+    line-height: @line-height-base;
+}
+
+// 强调
+s,
+del {
+    text-decoration: line-through;
+}
+
+u,
+ins {
+    text-decoration: underline;
+}
+
+strong {
+    font-weight: bold;
+}
+
+em {
+    font-style: italic;
+}
+
+small {
+    font-size: floor((100% * @font-size-small / @font-size-base));
+}
+
+// 地址
+address {
+    font-style: normal;
+}
+
+// 引用
+cite {
+    font-style: normal;
+}
+
+// 代码
+pre,
+code,
+kbd,
+samp,
+var {
+    font-family: @font-family-monospace;
+    font-size: @font-size-base;
+}
+
+// 分隔符
+hr {
+    border-bottom: 1px solid #cfcfcf;
+}
+
+// 缩略
+abbr {
+    &[title] {
+        cursor: help;
+        border-bottom: 1px dotted #cfcfcf;
+    }
+}
+
+// 上标&下标
+sup,
+sub {
+    position: relative;
+    font-size: 75%;
+
+    vertical-align: baseline;
+    line-height: 0;
+}
+
+sup {
+    top: -0.5em;
+}
+
+sub {
+    bottom: -0.25em;
+}
+
+
+// ==============================
+// 参考文献
+// ==============================
+//
+// ① 了解常用的、与网页排版相关的HTML标签
+// http://getbootstrap.com/css/#type & http://v3.bootcss.com/css/#type
+// https://github.com/sofish/typo.css/
+// http://css.hanzi.co/manual/yangshi_biaozhunhua
+// http://www.smashingmagazine.com/2011/03/14/technical-web-typography-guidelines-and-techniques/
+//
+// ② 了解当下流行的Typo样式文件及工具
+// https://github.com/twbs/bootstrap/blob/master/less/type.less
+// https://github.com/sofish/typo.css/
+// https://github.com/csswizardry/typecsset/
+// https://github.com/ethantw/Han/
+// https://github.com/lepture/yue.css/
+// https://github.com/zmmbreeze/Entry.css/
+// http://www.typogui.de/
+// http://ant.design/docs/spec/font
+//
+// ③ 定制Typo文件
+// 1、自定义全局字体（font-family）
+// 2、自定义全局字号（font-size）
+// 3、自定义全局行高（line-height）
+// 4、正常化常用标签样式

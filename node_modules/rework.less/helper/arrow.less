@@ -1,0 +1,147 @@
+/*
+* 模块描述：CSS边框箭头生成系统
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（8+）
+* 模块作者：@yincw
+* 最后更新：2016-08-24
+*/
+
+// @arrow-background-color: 箭头背景色（边框）
+// @arrow-foreground-color: 箭头前景色（背景）
+// @arrow-position: 箭头位置，可选值有（top-left, top, top-right; right-top, right, right-bottom; bottom-right, bottom, bottom-left; left-bottom, left, left-top）
+// @arrow-size: 箭头大小
+// @arrow-border-size: 箭头边框大小
+// @arrow-offset: 箭头偏移量
+
+.make-arrow(
+    @arrow-background-color: transparent,
+    @arrow-foreground-color: #eee,
+    @arrow-position: bottom,
+    @arrow-size: 8px,
+    @arrow-border-size: 1px,
+    @arrow-offset: 10px ) {
+
+    position: relative;
+
+    // 箭头位置
+    &:before,
+    &:after {
+        position: absolute;
+        pointer-events: none;
+
+        content: "";
+
+        display: block;
+        width: 0;
+        height: 0;
+        border: @arrow-size solid transparent;
+
+        // top
+        & when (@arrow-position = top-left), (@arrow-position = top), (@arrow-position = top-right) {
+            bottom: 100%;
+        }
+        // right
+        & when (@arrow-position = right-top), (@arrow-position = right), (@arrow-position = right-bottom) {
+            left: 100%;
+        }
+        // bottom
+        & when (@arrow-position = bottom-right), (@arrow-position = bottom), (@arrow-position = bottom-left) {
+            top: 100%;
+        }
+        // left
+        & when (@arrow-position = left-bottom), (@arrow-position = left), (@arrow-position = left-top) {
+            right: 100%;
+        }
+
+        & when (@arrow-position = top-left), (@arrow-position = bottom-left) {
+            left: @arrow-offset;
+        }
+        & when (@arrow-position = top), (@arrow-position = bottom) {
+            left: 50%;
+            margin-left: @arrow-size * -1;
+        }
+        & when (@arrow-position = top-right), (@arrow-position = bottom-right) {
+            right: @arrow-offset;
+        }
+
+        & when (@arrow-position = left-top), (@arrow-position = right-top) {
+            top: @arrow-offset;
+        }
+        & when (@arrow-position = left), (@arrow-position = right) {
+            top: 50%;
+            margin-top: @arrow-size * -1;
+        }
+        & when (@arrow-position = left-bottom), (@arrow-position = right-bottom) {
+            bottom: @arrow-offset;
+        }
+
+    }
+
+    // 前-箭头前景色（边框）
+    &:before {
+
+        // top
+        & when (@arrow-position = top-left), (@arrow-position = top), (@arrow-position = top-right) {
+            border-bottom-color: @arrow-background-color;
+        }
+        // right
+        & when (@arrow-position = right-top), (@arrow-position = right), (@arrow-position = right-bottom) {
+            border-left-color: @arrow-background-color;
+        }
+        // bottom
+        & when (@arrow-position = bottom-right), (@arrow-position = bottom), (@arrow-position = bottom-left) {
+            border-top-color: @arrow-background-color;
+        }
+        // left
+        & when (@arrow-position = left-bottom), (@arrow-position = left), (@arrow-position = left-top) {
+            border-right-color: @arrow-background-color;
+        }
+
+    }
+
+    // 后-箭头背景色（背景）
+    &:after {
+
+        // top
+        & when (@arrow-position = top-left), (@arrow-position = top), (@arrow-position = top-right) {
+            border-bottom-color: @arrow-foreground-color;
+            margin-bottom: @arrow-border-size * -1;
+        }
+        // right
+        & when (@arrow-position = right-top), (@arrow-position = right), (@arrow-position = right-bottom) {
+            border-left-color: @arrow-foreground-color;
+            margin-left: @arrow-border-size * -1;
+        }
+        // bottom
+        & when (@arrow-position = bottom-right), (@arrow-position = bottom), (@arrow-position = bottom-left) {
+            border-top-color: @arrow-foreground-color;
+            margin-top: @arrow-border-size * -1;
+        }
+        // left
+        & when (@arrow-position = left-bottom), (@arrow-position = left), (@arrow-position = left-top) {
+            border-right-color: @arrow-foreground-color;
+            margin-right: @arrow-border-size * -1;
+        }
+
+        & when (@arrow-border-size < 2) {
+        }
+        & when (@arrow-border-size > 1), (@arrow-border-size < 6) {
+        }
+
+    }
+
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// .example-1 { .make-arrow(); }
+// .example-2 { .make-arrow(#00f, #0f0); }
+
+// ==============================
+// 参考文献
+// ==============================
+// http://cssarrowplease.com/
+// http://www.howtocreate.co.uk/tutorials/css/slopes
+// http://mrcoles.com/blog/callout-box-css-border-triangles-cross-browser/
+// http://jonrohan.codes/fieldnotes/creating-triangles-in-css/
+// http://www.daqianduan.com/4721.html

@@ -1,0 +1,39 @@
+/*
+* 模块描述：转换最小值
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2014-06-02
+*/
+
+.min-width(@value) {
+    // Chrome、Firefox、IE8及以上识别
+    min-width: @value;
+
+    // 针对 IE7 hack（IE6、IE7识别）
+    width: auto !important;
+
+    // 针对 IE6 hack
+    width: @value;
+}
+
+.min-height(@value) {
+    // Chrome、Firefox、IE8及以上
+    min-height: @value;
+
+    // 针对 IE7 hack（IE6、IE7识别）
+    height: auto !important;
+
+    // 针对 IE6 hack
+    height: @value;
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// .example { .min-width(100px); }
+// .example { .min-height(100px); }
+
+// ==============================
+// 参考文献
+// ==============================
+// http://caniuse.com/#feat=minmaxwh

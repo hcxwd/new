@@ -1,0 +1,19 @@
+{
+  "author": "黄楚雄",
+  "type": 0,
+  "format": "function",
+  "group": "",
+  "name": "NavLink",
+  "description": "NavLink",
+  "version": "1.0.0",
+  "compatibility": {
+    "chrome": "latest",
+    "firefox": "latest",
+    "safari": "latest",
+    "ie": "9+"
+  },
+  "isPropCheck": true,
+  "note": "",
+  "lifecycle": [],
+  "camelCaseName": "navLink"
+}

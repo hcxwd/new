@@ -1,0 +1,43 @@
+/*
+* 模块描述：文本处理 - 溢出隐藏（作用元素必须是 block 或 inline-block 级）
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2014-06-02
+*/
+
+// 单行文本溢出隐藏
+.text-overflow-nowrap {
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+// 单行文本以省略号形式（...）溢出隐藏
+.text-overflow-nowrap-ellipsis {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+// 多行文本溢出隐藏（Webkit内核浏览器）
+.text-overflow-ellipsis(@count) {
+    overflow: hidden;
+
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: @count;
+
+    text-overflow: ellipsis;
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// class="text-overflow-nowrap"
+// class="text-overflow-nowrap-ellipsis"
+// .example { .text-overflow-ellipsis(3); }
+
+// ==============================
+// 参考文献
+// ==============================
+// http://www.css88.com/archives/5206
+// http://c7sky.com/text-overflow-ellipsis-on-multiline-text.html

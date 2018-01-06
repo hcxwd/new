@@ -1,0 +1,28 @@
+/*
+* 模块描述：常用内边距工具类（5-40）
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2016-03-11
+*/
+
+.make-padding(@n, @i: 1, @interval: @i * 5) when (@interval =< @n) {
+    .p@{interval} { padding: @interval * 1px; }
+    .pt@{interval} { padding-top: @interval * 1px; }
+    .pr@{interval} { padding-right: @interval * 1px; }
+    .pb@{interval} { padding-bottom: @interval * 1px; }
+    .pl@{interval} { padding-left: @interval * 1px; }
+
+    .make-padding(@n, (@i + 1));
+}
+
+.make-padding(40);
+
+// ==============================
+// 使用示例
+// ==============================
+// class="p5"
+
+// ==============================
+// 参考文献
+// ==============================
+// http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/

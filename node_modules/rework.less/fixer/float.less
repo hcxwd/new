@@ -1,0 +1,41 @@
+/*
+* 模块描述：修复浮动元素双边距
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2014-06-02
+*/
+
+.pull {
+
+    &-left,
+    &-right {
+        *display: inline;
+        *zoom: 1;
+    }
+
+    &-left {
+        float: left !important;
+    }
+    &-right {
+        float: right !important;
+    }
+
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// 方式一：
+// class="pull-left"
+// class="pull-right"
+// 方式二：
+// .example { .pull-left(); }
+// .example { .pull-right(); }
+
+
+// ==============================
+// 参考文献
+// ==============================
+// http://code.tutsplus.com/tutorials/9-most-common-ie-bugs-and-how-to-fix-them--net-7764
+// http://css.doyoe.com/
+// http://www.onderhond.com/tools/ie6fixer/

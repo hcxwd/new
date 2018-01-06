@@ -1,0 +1,28 @@
+/*
+* 模块描述：常用外边距工具类（5-40）
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2016-03-11
+*/
+
+.make-margin(@n, @i: 1, @interval: @i * 5) when (@interval =< @n) {
+    .m@{interval} { margin: @interval * 1px; }
+    .mt@{interval} { margin-top: @interval * 1px; }
+    .mr@{interval} { margin-right: @interval * 1px; }
+    .mb@{interval} { margin-bottom: @interval * 1px; }
+    .ml@{interval} { margin-left: @interval * 1px; }
+
+    .make-margin(@n, (@i + 1));
+}
+
+.make-margin(40);
+
+// ==============================
+// 使用示例
+// ==============================
+// class="m5"
+
+// ==============================
+// 参考文献
+// ==============================
+// http://www.hicss.net/separation-of-powers-model-in-css-design-patterns/

@@ -1,0 +1,82 @@
+/*
+* 模块描述：文本处理 - 颜色
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2015-06-03
+*/
+
+.text {
+    @color-white: #fff;
+    @color-black-10: darken(@color-white, 10%);
+    @color-black-20: darken(@color-white, 20%);
+    @color-black-30: darken(@color-white, 30%);
+    @color-black-40: darken(@color-white, 40%);
+    @color-black-50: darken(@color-white, 50%);
+    @color-black-60: darken(@color-white, 60%);
+    @color-black-70: darken(@color-white, 70%);
+    @color-black-80: darken(@color-white, 80%);
+    @color-black-90: darken(@color-white, 90%);
+    @color-black: #000;
+
+    // RGB
+    @color-red: #e86666; // #f00
+    @color-green: #2bad66; // #0f0
+    @color-blue: #32a8e9; // #00f
+
+    // RG & RB & GB
+    @color-cyan: #066;
+    @color-yellow: #ff0;
+    @color-orange: #fe975f; // #f90
+    @color-purple: #90f;
+    @color-pink: #f09;
+
+    //////////////////////////////////////////////////////
+
+    &-white {
+        color: @color-white;
+    }
+    &-gray {
+        color: @color-black-50;
+    }
+    &-black {
+        color: @color-black;
+    }
+
+    &-red {
+        color: @color-red;
+    }
+    &-green {
+        color: @color-green;
+    }
+    &-blue {
+        color: @color-blue;
+    }
+
+    &-cyan {
+        color: @color-cyan;
+    }
+    &-yellow {
+        color: @color-yellow;
+    }
+
+    &-orange {
+        color: @color-orange;
+    }
+    &-purple {
+        color: @color-purple;
+    }
+    &-pink {
+        color: @color-pink;
+    }
+
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// class="text-blue"
+
+// ==============================
+// 参考文献
+// ==============================
+// http://www.shejidaren.com/examples/tools/websafecolors/

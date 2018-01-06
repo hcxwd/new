@@ -1,0 +1,25 @@
+{
+  "name": "rework.less",
+  "version": "1.0.0",
+  "description": "一种面向浏览器用户代理样式（user agent stylesheet）兼容的解决方案",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/yincw/rework.less.git"
+  },
+  "keywords": [
+    "CSS",
+    "Less",
+    "Reset",
+    "Toolkit"
+  ],
+  "author": "yincw",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/yincw/rework.less/issues"
+  },
+  "homepage": "https://github.com/yincw/rework.less#readme"
+}

@@ -1,0 +1,37 @@
+{
+  "author": "黄楚雄",
+  "type": 1,
+  "format": "class",
+  "name": "User",
+  "description": "user ",
+  "version": "1.0.0",
+  "compatibility": {
+    "chrome": "latest",
+    "firefox": "latest",
+    "safari": "latest",
+    "ie": "9+"
+  },
+  "lifecycleMountingOptions": [
+    "constructor",
+    "render",
+    "componentWillMount"
+  ],
+  "lifecycleUpdatingOptions": [
+    "componentWillReceiveProps",
+    "shouldComponentUpdate"
+  ],
+  "isPropCheck": true,
+  "saga": {
+    "url": "/api/User/Get",
+    "requestVarName": "Get",
+    "method": "get"
+  },
+  "lifecycle": [
+    "constructor",
+    "render",
+    "componentWillMount",
+    "componentWillReceiveProps",
+    "shouldComponentUpdate"
+  ],
+  "camelCaseName": "user"
+}

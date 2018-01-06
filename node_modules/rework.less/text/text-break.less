@@ -1,0 +1,45 @@
+/*
+* 模块描述：文本处理 - 换行
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2014-06-02
+*/
+
+// 以“单词”作为换行依据
+.text-break-word {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+// 以“字符”【“字母”、“数字”、“字”】作为换行依据
+.text-break-letter {
+    white-space: pre-wrap;
+    word-break: break-all;
+}
+
+// 不换行
+.text-nowrap {
+    white-space: nowrap;
+}
+
+// ==============================
+// CSS属性说明
+// ==============================
+// white-space: pre-wrap; // CSS 1.0，强制换行，只对中文起作用
+// white-space: nowrap; // CSS 1.0，强制不换行，中英文都起作用
+// word-wrap: break-word;  // CSS 3.0，以单词作为换行依据，只对英文起作用
+// word-break: break-all; // CSS 3.0，以字母作为换行依据，只对英文起作用
+
+// ==============================
+// 使用示例
+// ==============================
+// class="text-nowrap"
+// class="text-break-word"
+// .example { .text-break-letter(); }
+
+// ==============================
+// 参考文献
+// ==============================
+// http://caniuse.com/#feat=word-break
+// http://zmingcx.com/css-compulsory-english-chinese-and-non-wrapping-line.html
+// http://www.hicss.net/solve-change-line-in-css/

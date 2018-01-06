@@ -1,0 +1,25 @@
+/*
+* 模块描述：转换元素透明度值
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2014-06-02
+*/
+
+.opacity(@value) {
+    @value-ie: (@value * 100);
+
+    opacity: @value;
+
+    // IE6、IE7、IE8 使用 filter 滤镜透明
+    filter: e('progid:DXImageTransform.Microsoft.Alpha(Opacity=@{value-ie})');
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// .example { .opacity(.5); }
+
+// ==============================
+// 参考文献
+// ==============================
+// http://caniuse.com/#feat=css-opacity

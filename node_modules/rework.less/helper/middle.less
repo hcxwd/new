@@ -1,0 +1,53 @@
+/*
+* 模块描述：常用元素居中工具类（垂直方向）
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（6+）
+* 模块作者：@yincw
+* 最后更新：2014-06-07
+*/
+
+.middle(@width, @height) {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    margin-top: (@height / 2) * -1;
+    margin-left: (@width / 2) * -1;
+
+    height: @height;
+    width: @width;
+}
+
+// Explorer（9+）
+.middle-transform() {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+}
+
+// Explorer（8+）
+.middle-table() {
+    display: table;
+    width: 100%;
+    height: 100%;
+
+    &-container {
+        display: table-cell;
+        text-align: center;
+        vertical-align: middle;
+    }
+}
+
+// ==============================
+// 使用示例
+// ==============================
+// .example { .middle(100px, 200px); }
+// .example { .middle-transform(); }
+// .example { .middle-table(); }
+
+// ==============================
+// 参考文献
+// ==============================
+// http://caniuse.com/#feat=transforms2d
+// http://caniuse.com/#feat=css-table

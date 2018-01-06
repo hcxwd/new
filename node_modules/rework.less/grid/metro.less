@@ -1,0 +1,205 @@
+/*
+* 模块描述：栅格系统 - Metro 风格（最小 Gutter 为 1 的倍数）
+* 模块兼容：Chrome（latest-1）、Firefox（latest-1）、Explorer（8+）
+* 模块作者：@yincw
+* 最后更新：2014-11-21
+*/
+
+.make-metro(@tile-width: 120px, @tile-height: 120px, @tile-margin: 5px) {
+
+    @metro-tile-width: @tile-width;
+    @metro-tile-height: @tile-height;
+    @metro-tile-margin: @tile-margin; // margin-left || margin-top
+
+    // 瓦片
+    .tile {
+        width: @metro-tile-width;
+        height: @metro-tile-height;
+
+        margin: @metro-tile-margin 0 0 @metro-tile-margin;
+    }
+    .half-tile {
+        width: (@metro-tile-width/2) - (@tile-margin*1)/2;
+        height: (@metro-tile-height/2) - (@tile-margin*1)/2;
+    }
+    .one-tile {
+        width: @metro-tile-width;
+        height: @metro-tile-height;
+    }
+
+    // 瓦片宽度（wide）选项
+    .half-wide {
+        width: (@metro-tile-width/2) - (@tile-margin*1)/2;
+    }
+    .one-wide {
+        width: @metro-tile-width;
+    }
+    .two-wide {
+        width: (@metro-tile-width*2) + (@tile-margin*1);
+    }
+    .three-wide {
+        width: (@metro-tile-width*3) + (@tile-margin*1)*2;
+    }
+    .four-wide {
+        width: (@metro-tile-width*4) + (@tile-margin*1)*3;
+    }
+    .five-wide {
+        width: (@metro-tile-width*5) + (@tile-margin*1)*4;
+    }
+    .six-wide {
+    }
+    .seven-wide {
+    }
+    .eight-wide {
+    }
+    .nine-wide {
+    }
+    .ten-wide {
+    }
+
+    // 瓦片高度（tall）选项
+    .half-tall {
+        height: (@metro-tile-height/2) - (@tile-margin*1)/2;
+    }
+    .one-tall {
+        height: @metro-tile-height;
+    }
+    .two-tall {
+        height: (@metro-tile-height*2) + (@tile-margin*1);
+    }
+    .three-tall {
+        height: (@metro-tile-height*3) + (@tile-margin*1)*2;
+    }
+    .four-tall {
+        height: (@metro-tile-height*4) + (@tile-margin*1)*3;
+    }
+    .five-tall {
+        height: (@metro-tile-height*5) + (@tile-margin*1)*4;
+    }
+    .six-tall {
+    }
+    .seven-tall {
+    }
+    .eight-tall {
+    }
+    .nine-tall {
+    }
+    .ten-tall {
+    }
+
+    // 瓦片组/条选项
+    .tile-group,
+    .tile-strip {
+
+        // 瓦片宽度（wide）选项
+        &.one-wide {
+            width: @metro-tile-width + (@tile-margin*1);
+        }
+        &.two-wide {
+            width: (@metro-tile-width*2) + (@tile-margin*1)*2;
+        }
+        &.three-wide {
+            width: (@metro-tile-width*3) + (@tile-margin*1)*3;
+        }
+        &.four-wide {
+            width: (@metro-tile-width*4) + (@tile-margin*1)*4;
+        }
+        &.five-wide {
+            width: (@metro-tile-width*5) + (@tile-margin*1)*5;
+        }
+        &.six-wide {
+        }
+        &.seven-wide {
+        }
+        &.eight-wide {
+        }
+        &.nine-wide {
+        }
+        &.ten-wide {
+        }
+
+        // 瓦片高度（tall）选项
+        &.one-tall {
+            height: @metro-tile-height + (@tile-margin*1);
+        }
+        &.two-tall {
+            height: (@metro-tile-height*2) + (@tile-margin*1)*2;
+        }
+        &.three-tall {
+            height: (@metro-tile-height*3) + (@tile-margin*1)*3;
+        }
+        &.four-tall {
+            height: (@metro-tile-height*4) + (@tile-margin*1)*4;
+        }
+        &.five-tall {
+            height: (@metro-tile-height*5) + (@tile-margin*1)*5;
+        }
+        &.six-tall {
+        }
+        &.seven-tall {
+        }
+        &.eight-tall {
+        }
+        &.nine-tall {
+        }
+        &.ten-tall {
+        }
+
+    }
+
+    .metro {
+        *zoom: 1;
+
+        &:before,
+        &:after {
+            display: table;
+            content: " ";
+        }
+
+        &:after {
+            clear: both;
+        }
+
+        .tile,
+        .tile-group,
+        .tile-strip {
+            float: left;
+
+            position: relative;
+            *zoom: 1;
+        }
+
+        .tile {
+            z-index: 1;
+        }
+        .tile-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: 2;
+        }
+
+        .tile-group {
+            margin-right: @tile-margin*10;
+        }
+        .tile-group-title {
+            margin: @tile-margin;
+        }
+
+    }
+
+}
+
+// ==============================
+// 使用示例
+// ==============================
+//.make-metro();
+//.make-metro(100px, 100px, 4px);
+
+// ==============================
+// 参考文献
+// ==============================
+// http://www.drewgreenwell.com/
+// http://metroui.org.ua/
+// http://www.paulund.co.uk/create-interactive-grid-dashboard
