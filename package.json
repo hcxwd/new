@@ -40,7 +40,7 @@
     "eslint": "^4.14.0",
     "immutable": "^3.8.2",
     "konva": "^1.7.6",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.19",
     "react": "^16.2.0",
     "react-dom": "^16.2.0",
     "react-konva": "^1.6.4",
